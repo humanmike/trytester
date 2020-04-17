@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "trytester"
+version = "0.1.0"
+description = ""
+authors = ["humanmike"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.23.0"
+
+[tool.poetry.dev-dependencies]
+coverage = "^5.1"
+coveralls = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0a5"]
+build-backend = "poetry.core.masonry.api"

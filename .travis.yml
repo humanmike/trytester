@@ -1,0 +1,23 @@
+sudo: false
+language: python
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+install:
+  # 针对每次的新环境安装相关依赖
+  - pip install poetry
+  # 使用poetry 去安装pyproject.toml的所有依赖包
+  - poetry install -vvv
+script:
+  # 普通的执行方式
+  # - python -m unittest discover
+  # coverage的执行方式
+  # 为什么添加poetry run保证都是运行在虚拟环境里面
+  - poetry run coverage run --source=test_api_job -m unittest discover
+  - poetry run coverage report
+  - poetry run coveralls
