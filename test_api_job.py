@@ -10,8 +10,8 @@ class TestMubuClass(unittest.TestCase):
     def mubu_login_api(self):
         url = 'https://mubu.com/api/login/submit'
         data = {
-            'phone': '15999555574',
-            'password': 'qq316118979',
+            'phone': '',
+            'password': '',
         }
         result = self.s.post(url=url, data=data)
         return result
